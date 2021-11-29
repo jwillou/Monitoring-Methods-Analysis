@@ -22,7 +22,7 @@ data$noninv[data$comparison=="camlive"] = data$camera.num.indv[data$comparison==
 #run regression checking if estimates follow 1:1, going through 0,0
 lm.out=lm(log(data$noninv)~0+log(data$livetrap.num.indv))
 summary(lm.out)
-plot(-100,-100, xlab="log(number of individuals), live trapping", ylab="log(number of individuals), non-invasive methods", xlim=c(0,6), ylim=c(0,6))
+plot(-100,-100, xlab="log(number of individuals), live trapping", ylab="log(number of individuals), less invasive methods", xlim=c(0,6), ylim=c(0,6))
 points(log(data$livetrap.num.indv[data$comparison=="livegen"]), log(data$noninv[data$comparison=="livegen"]), pch=19, col=alpha("firebrick3", alpha=0.7))
 points(log(data$livetrap.num.indv[data$comparison=="camlive"]), log(data$noninv[data$comparison=="camlive"]), pch=19, col=alpha("dodgerblue3", alpha=0.7))
 segments(x0=0,y0=0, x1=6,y1=(lm.out$coefficients[1]*6), lwd=2, col="black")
